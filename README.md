@@ -118,6 +118,8 @@ mc
 ## Docker compose
 Met docker compose kunnen we meerder containers tegelijk starten. Bijvoorbeeld een website en daarbij een database
 
+Installeer docker compose (https://docs.docker.com/compose/install/)
+
 ```
 cd my_wordpress
 
