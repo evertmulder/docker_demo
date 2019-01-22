@@ -127,6 +127,18 @@ cd my_wordpress
 docker-compose -d up
 ```
 
+Open de wordpress site http://localhost:8000
+
+
+stop de stack
+```
+docker-compose stop
+```
+
+verwijder de stack
+```
+docker-compose kill
+```
 
 ```
 docker-compose -f docker-compose_2web.yml up -d
