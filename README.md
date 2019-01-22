@@ -55,7 +55,7 @@ docker images
 
 ## Zelf een container bouwen
 
-Van de door een container maken. We gebruiken hier een zo minimale base image 'alpine linux' voor.
+Met het commando docker build en een Dockerfile kunnen we een nieuw docker container bouwen. We gebruiken hier een zo minimale base image 'alpine linux' voor.
 
 ```
 cd my_alpine
