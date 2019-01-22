@@ -140,6 +140,10 @@ verwijder de stack
 docker-compose kill
 ```
 
+Start de site met 2 web frontends:
+
 ```
 docker-compose -f docker-compose_2web.yml up -d
 ```
+
+
