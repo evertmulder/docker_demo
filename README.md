@@ -30,7 +30,8 @@ docker run hello-world
 docker run -i -t -d [container:tag] [commando] <commande argument>
 ```
 
-Voer het volgende commando uit
+Voer het volgende commando uit. Dit start een container met de naam alpine. Alpine is een minimale linux distributie en wordt vaak gebruikt als basis voor andere containers.
+
 ```
 docker run -i -t -d alpine
 ```
@@ -46,7 +47,7 @@ docker ps -a
 #verwijder een container
 docker rm [naam/id]
 
-#verwijder gestopted containers
+#verwijder gestopted containers van disk (house keeping)
 docker container prune
 
 #list de locale beschikbare images
@@ -59,10 +60,16 @@ Met het commando docker build en een Dockerfile kunnen we een nieuw docker conta
 
 ```
 cd my_alpine
+
+# Bekijk de inhoud van een Docerfile
+cat Dockerfile
+
+# Kun je zien wat de container gaat doen?
+
 docker build . -t my_alpine
 ```
 
-We hebben nu een image gebuild deze een naam en een tag gegeven.
+We hebben nu een image gebuild deze een naam gegeven door de -t toevoeging.
 Het image hebben we nu beschilbaar. Controleer dit door het volgende commando uit te voeren:
 ```
 docker images
@@ -70,6 +77,8 @@ docker images
 
 Run de container
 ```
+# de -d betekend, uitvoeren als achtergrond proces
+
 docker run -d my_alpine
 ```
 
@@ -88,7 +97,7 @@ Bekijk de Dockerfile en vervang het 1e CMD commando door de 2e die nu in comment
 
 Run de container
 ```
-docker run -d my_alpine
+docker run -d --name my_container my_alpine
 ```
 
 Controleer of de container nog draait.
@@ -106,12 +115,23 @@ Om de STDOUT te zien (de console output van het docker proces)
 docker logs -f [container naam of id]
 ```
 
-Het is ook mogelijk om in een draaiende container een shell te starten (voor de meeste images gebaseerd op een full OS)
+Het is ook mogelijk om in een draaiende container een shell te starten
 ```
+# voer het programma 'sh' uit binnen de container. SH is een terminal of command prompt.
 docker exec -it [container naam of id] sh
+
+# met apk kunnen extra packages geinstalleerd worden binnen alpine. Het volgende installeerd het programma htop
 apk add htop
+
+# htop is een linux applicatie die het memory en cpu verbruik kan weergeven en alle lopende processen binnen een container
 htop
+
+
+
+# Installeer nu mc, (midnight commander) een file explorer onder linux
 apk add mc
+
+# We hebben nu binnen de container en file explorer beschikbaar
 mc
 ```
 
@@ -139,11 +159,3 @@ verwijder de stack
 ```
 docker-compose kill
 ```
-
-Start de site met 2 web frontends:
-
-```
-docker-compose -f docker-compose_2web.yml up -d
-```
-
-
