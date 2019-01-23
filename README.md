@@ -33,7 +33,7 @@ docker run -i -t -d [container:tag] [commando] <commande argument>
 Voer het volgende commando uit. Dit start een container met de naam alpine. Alpine is een minimale linux distributie en wordt vaak gebruikt als basis voor andere containers.
 
 ```
-docker run -i -t -d alpine
+docker run -i -t alpine
 ```
 
 Overzichtje basic docker commando's.
