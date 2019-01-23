@@ -144,7 +144,7 @@ Installeer docker compose (https://docs.docker.com/compose/install/)
 cd my_wordpress
 
 # start webserver en database
-docker-compose -d up
+docker-compose up -d
 ```
 
 Open de wordpress site http://localhost:8000
